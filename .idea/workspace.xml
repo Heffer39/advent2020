@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46db6032-3018-4f87-96ae-d20851354ff2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/day5/boardingPasses.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day5/day5.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day4/day4.go" beforeDir="false" afterPath="$PROJECT_DIR$/day4/day4.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/day4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/day5" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,7 +51,7 @@
       <recent name="$PROJECT_DIR$/day1" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build advent2020 day4">
+  <component name="RunManager" selected="Go Build.go build advent2020 day5">
     <configuration name="go build advent2020 day1" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="advent2020" />
       <working_directory value="$PROJECT_DIR$/day1" />
@@ -81,6 +82,16 @@
       <directory value="$PROJECT_DIR$/day4" />
       <method v="2" />
     </configuration>
+    <configuration name="go build advent2020 day5" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="advent2020" />
+      <working_directory value="$PROJECT_DIR$/day5" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$" />
+      <package value="advent2020" />
+      <directory value="$PROJECT_DIR$/day5" />
+      <method v="2" />
+    </configuration>
     <configuration name="go test advent2020 day3" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="advent2020" />
       <working_directory value="$PROJECT_DIR$/day3" />
@@ -94,6 +105,7 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build advent2020 day4" />
+      <item itemvalue="Go Build.go build advent2020 day5" />
       <item itemvalue="Go Build.go build advent2020 day1" />
       <item itemvalue="Go Build.go build advent2020 day2" />
       <item itemvalue="Go Test.go test advent2020 day3" />
@@ -122,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608261949602</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Day four part two">
+      <created>1608657247277</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608657247277</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +162,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Day 2" />
     <MESSAGE value="Day four part one" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day four part one" />
+    <MESSAGE value="Day four part two" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day four part two" />
   </component>
 </project>
