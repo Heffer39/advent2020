@@ -8,6 +8,10 @@ import (
 	"path/filepath"
 )
 
+type seat struct {
+	row, col, seatID int
+}
+
 func main() {
 	abs, err := filepath.Abs("./boardingPasses.txt")
 	file, err := os.Open(abs)
@@ -24,9 +28,10 @@ func main() {
 		log.Fatal("data not parsed")
 	}
 
-	var highestBoardingPass int
+	var highestBoardingPass, lowestBoardingPass int
 	var minRow, maxRow int
 	var minCol, maxCol int
+	var seatMap = make(map[int]seat)
 
 	for _, s := range data {
 		if len(s) != 10 {
@@ -49,16 +54,24 @@ func main() {
 			case 'R':
 				minCol = colMedian + 1
 			}
-			/*fmt.Printf("min row: %v, max row: %v, "+
-			"min col: %v, max col:%v\n", minRow, maxRow, minCol, maxCol)*/
 		}
 
 		seatID := minRow*8 + minCol
-		fmt.Printf("row: %v, col: %v, seatID: %v\n", minRow, minCol, seatID)
+		//fmt.Printf("row: %v, col: %v, seatID: %v\n", minRow, minCol, seatID)
 		if seatID > highestBoardingPass {
 			highestBoardingPass = seatID
 		}
+		if seatID < lowestBoardingPass || lowestBoardingPass == 0 {
+			lowestBoardingPass = seatID
+		}
+		seatMap[seatID] = seat{row: minRow, col: minCol, seatID: seatID}
 	}
 
-	fmt.Printf("highest boarding pass: %v", highestBoardingPass)
+	for i := lowestBoardingPass; i <= highestBoardingPass; i++ {
+		if _, ok := seatMap[i]; !ok {
+			fmt.Printf("missing val: %v\n", i)
+		}
+	}
+
+	fmt.Printf("highest boarding pass: %v, lowest: %v", highestBoardingPass, lowestBoardingPass)
 }
