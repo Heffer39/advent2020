@@ -46,22 +46,24 @@ func main() {
 
 	var shinyGoldBagCount int
 	for _, vertex := range graph.vertices {
-		found := graph.recursiveBagSearch(vertex)
-		//fmt.Printf("bag: %v, count: %v\n", vertex.label, found)
+		found := graph.recursiveBagExistsSearch(vertex)
 		if found {
 			shinyGoldBagCount++
 		}
 	}
 	fmt.Printf("bag colors that can contain at least one shiny gold bag: %v\n", shinyGoldBagCount)
+
+	foundBags := graph.recursiveBagCountSearch(graph.vertices["shiny gold"])
+	fmt.Printf("shiny gold bag contains %v other bags\n", foundBags)
+
 }
 
-func (graph *Graph) recursiveBagSearch(v *Vertex) (found bool) {
+func (graph *Graph) recursiveBagExistsSearch(v *Vertex) (found bool) {
 	for _, edge := range v.edges {
 		if edge.to.label == "shiny gold" {
-			//fmt.Printf("\tvertex edge %v\n", v.label)
 			return true
 		} else if bag, ok := graph.vertices[edge.to.label]; ok {
-			found = graph.recursiveBagSearch(bag)
+			found = graph.recursiveBagExistsSearch(bag)
 			if found {
 				break
 			}
@@ -70,11 +72,24 @@ func (graph *Graph) recursiveBagSearch(v *Vertex) (found bool) {
 	return found
 }
 
+func (graph *Graph) recursiveBagCountSearch(v *Vertex) (foundBags int) {
+	for _, edge := range v.edges {
+		foundBags += edge.weight
+		if bag, ok := graph.vertices[edge.to.label]; ok {
+			count := edge.weight * graph.recursiveBagCountSearch(bag)
+			foundBags += count
+		}
+	}
+	return
+}
+
+// Edge points to a Vertex and captures the associated weight
 type Edge struct {
 	to     *Vertex
 	weight int
 }
 
+// Vertex represents a Vertex in a Graph data structure, containing a slice of Edges
 type Vertex struct {
 	label string
 	edges []*Edge
@@ -84,6 +99,7 @@ func (v *Vertex) addEdge(edge Edge) {
 	v.edges = append(v.edges, &edge)
 }
 
+// Graph represents a weighted Graph data structure, containing a map of Vertices
 type Graph struct {
 	vertices map[string]*Vertex
 }
