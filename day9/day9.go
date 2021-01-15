@@ -24,6 +24,13 @@ func main() {
 		xmas = append(xmas, v)
 	}
 
+	invalidNumber := findInvalidNumber(xmas)
+	fmt.Printf("invalid index: %v, value: %v\n", invalidNumber.index+1, xmas[invalidNumber.index])
+	encryptionWeakness := findContiguousSum(xmas, invalidNumber)
+	fmt.Printf("encyrption weakness: %v", encryptionWeakness)
+}
+
+func findInvalidNumber(xmas []int) (invalidNumber number) {
 	preambleSize := 25
 	xmasMap := make(map[int]int)
 	valid := false
@@ -38,7 +45,10 @@ func main() {
 				}
 			}
 			if !valid {
-				fmt.Printf("invalid index: %v, value: %v", index+1, xmas[index])
+				invalidNumber = number{
+					index: index,
+					value: xmas[index],
+				}
 				break
 			}
 			valid = false
@@ -50,4 +60,46 @@ func main() {
 		}
 		xmasMap[xmas[index]]++
 	}
+	return
+}
+
+func findContiguousSum(xmas []int, invalidNumber number) int {
+	var weakness pair
+	for index := 0; index < invalidNumber.index; index++ {
+		sum := xmas[index]
+		for frontIndex := index + 1; frontIndex < invalidNumber.index; frontIndex++ {
+			sum += xmas[frontIndex]
+			if sum == invalidNumber.value {
+				weakness = pair{
+					frontIndex: frontIndex,
+					backIndex:  index,
+				}
+				break
+			}
+			if sum > invalidNumber.value {
+				break
+			}
+		}
+	}
+
+	var smallest, largest int
+	for index := weakness.backIndex; index <= weakness.frontIndex; index++ {
+		val := xmas[index]
+		if val > largest {
+			largest = val
+		}
+		if val < smallest || smallest == 0 {
+			smallest = val
+		}
+	}
+	result := smallest + largest
+	return result
+}
+
+type pair struct {
+	frontIndex, backIndex int
+}
+
+type number struct {
+	index, value int
 }

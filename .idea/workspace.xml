@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46db6032-3018-4f87-96ae-d20851354ff2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/day9/XMAS.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day9/day9.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day9/day9.go" beforeDir="false" afterPath="$PROJECT_DIR$/day9/day9.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610719433763</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Day 9 part 1">
+      <created>1610731010754</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610731010754</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +280,7 @@
     <MESSAGE value="Day 7 part 2" />
     <MESSAGE value="Day 8 part 1" />
     <MESSAGE value="Day 8 part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 8 part 2" />
+    <MESSAGE value="Day 9 part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 9 part 1" />
   </component>
 </project>
