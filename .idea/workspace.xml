@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46db6032-3018-4f87-96ae-d20851354ff2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/day9/XMAS.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day9/day9.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day8/day8.go" beforeDir="false" afterPath="$PROJECT_DIR$/day8/day8.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/day8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/day9" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -47,12 +48,13 @@
       <recent name="$PROJECT_DIR$/day2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/day9" />
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/day6" />
       <recent name="$PROJECT_DIR$/day1" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build advent2020/day8">
+  <component name="RunManager" selected="Go Build.go build advent2020/day9">
     <configuration name="go build advent2020 day1" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="advent2020" />
       <working_directory value="$PROJECT_DIR$/day1" />
@@ -123,6 +125,16 @@
       <directory value="$PROJECT_DIR$/day8" />
       <method v="2" />
     </configuration>
+    <configuration name="go build advent2020/day9" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="advent2020" />
+      <working_directory value="$PROJECT_DIR$/day9" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$/day9" />
+      <package value="advent2020" />
+      <directory value="$PROJECT_DIR$/day9" />
+      <method v="2" />
+    </configuration>
     <configuration name="go test advent2020 day3" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="advent2020" />
       <working_directory value="$PROJECT_DIR$/day3" />
@@ -136,6 +148,7 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build advent2020/day8" />
+      <item itemvalue="Go Build.go build advent2020/day9" />
       <item itemvalue="Go Build.go build advent2020 day4" />
       <item itemvalue="Go Build.go build advent2020 day5" />
       <item itemvalue="Go Build.go build advent2020/day6" />
@@ -224,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610591623222</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Day 8 part 2">
+      <created>1610719433763</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610719433763</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +273,7 @@
     <MESSAGE value="README files" />
     <MESSAGE value="Day 7 part 2" />
     <MESSAGE value="Day 8 part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 8 part 1" />
+    <MESSAGE value="Day 8 part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 8 part 2" />
   </component>
 </project>
