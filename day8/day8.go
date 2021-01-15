@@ -17,7 +17,6 @@ func main() {
 		operation := split[0]
 		sign := split[1][0:1]
 		value, _ := strconv.Atoi(split[1][1:])
-		//fmt.Printf("sign: %v\n", sign)
 		if sign == "-" {
 			value *= -1
 		}
@@ -27,34 +26,49 @@ func main() {
 			index:     i,
 		})
 	}
+	found, accumulator := runOperations(
+		instructionsList, 0, 0, false)
 
-	/*for _, v := range instructionsList {
-		fmt.Printf("instruction: %v\n", v)
-	}*/
+	fmt.Printf("accumulator: %v, found: %v", accumulator, found)
+}
 
+func runOperations(instructionsList []instruction, accumulator, index int, inception bool) (found bool, result int) {
 	instructionsMap := make(map[int]*instruction)
 
-	accumulator := 0
-	index := 0
 	for {
-		ins := instructionsList[index]
-		if _, ok := instructionsMap[index]; ok {
-			break
+		if index >= len(instructionsList) {
+			fmt.Printf("reached end of list!\n")
+			return true, accumulator
 		}
+		if _, ok := instructionsMap[index]; ok {
+			return false, accumulator
+		}
+		ins := instructionsList[index]
 		instructionsMap[index] = &ins
-		//fmt.Printf("index: %v, operation: %v, value: %v\n", ins.index+1, ins.operation, ins.value)
 		switch ins.operation {
 		case "nop":
+			if !inception {
+				loop, _ := runOperations(instructionsList, accumulator, index+ins.value, true)
+				if loop {
+					fmt.Printf("NOP! broken index: %v, operation: %v, value: %v\n", ins.index+1, ins.operation, ins.value)
+					return true, accumulator
+				}
+			}
 			index++
 		case "acc":
 			accumulator += ins.value
 			index++
 		case "jmp":
+			if !inception {
+				loop, _ := runOperations(instructionsList, accumulator, index+1, true)
+				if loop {
+					fmt.Printf("JUMP! broken index: %v, operation: %v, value: %v\n", ins.index+1, ins.operation, ins.value)
+					return true, accumulator
+				}
+			}
 			index += ins.value
 		}
-		//fmt.Printf("\taccumulator: %v\n", accumulator)
 	}
-	fmt.Printf("accumulator: %v", accumulator)
 }
 
 type instruction struct {
